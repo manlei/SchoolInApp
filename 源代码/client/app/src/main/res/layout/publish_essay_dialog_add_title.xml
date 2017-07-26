@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/publish_essay_dialog_add_title"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<EditText
+    android:id="@+id/et_publish_essay_title"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:lines="1"
+    android:textSize="@dimen/normal_font_size"
+    android:hint="标题" />
+
+<TextView
+    android:id="@+id/et_publish_essay_error_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:gravity="right"
+    android:textColor="@color/red"
+    android:text="标题不能为空"
+    android:visibility="gone" />
+
+</LinearLayout>

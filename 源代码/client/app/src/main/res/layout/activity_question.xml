@@ -1,0 +1,314 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_question"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.QuestionActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_question_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></FrameLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl_question_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctbl_question_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:id="@+id/ll_question_main_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/activity_horizontal_padding"
+                    android:paddingRight="@dimen/activity_horizontal_padding">
+
+                    <TextView
+                        android:id="@+id/tv_question_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="80dp"
+                        android:text="我国的太空航天事业与普通人有什么关系？"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/normal_font_size" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_question_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <cn.edu.nju.cs.seg.schooledinapp.widgets.RichTextView
+                            android:id="@+id/tv_question_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="12314234141324124"
+                            android:textColor="@color/color333"
+                            android:textSize="@dimen/small_font_size"/>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_question_click"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rel"
+                            android:layout_marginBottom="6dp"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/tv_question_close"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="right"
+                                android:drawablePadding="4dp"
+                                android:text="收起"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/small_font_size"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tv_question_open"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="right"
+                                android:drawablePadding="4dp"
+                                android:text="展开"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/small_font_size" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/tv_question_heat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="3 热度"
+                            android:textColor="@color/fentchGrey"
+                            android:textSize="@dimen/small_font_size" />
+
+                        <include layout="@layout/include_dot_separator" />
+
+                        <TextView
+                            android:id="@+id/tv_question_supports"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="12 赞同"
+                            android:textColor="@color/fentchGrey"
+                            android:textSize="@dimen/small_font_size" />
+
+                        <include layout="@layout/include_dot_separator" />
+
+                        <TextView
+                            android:id="@+id/tv_question_created_at"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.99"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="2018-09-12 17:20"
+                            android:textColor="@color/fentchGrey"
+                            android:textSize="@dimen/small_font_size" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginTop="10dp"
+                    android:background="#F5F5F5" />
+
+                <LinearLayout
+                    android:id="@+id/ll_question_main_operations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ll_question_praise"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_question_praise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_question_praise"
+                                android:layout_width="15dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/icon_praise"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/iv_question_praise_white"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/icon_praise_white" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_question_praise"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:drawablePadding="10dp"
+                            android:text="好问题"
+                            android:textColor="@color/color333" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="#F5F5F5" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_question_collect"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_question_collect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_question_collect"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/icon_collect"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/iv_question_collect_white"
+                                android:layout_width="22dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/icon_collect_white" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_question_collect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:drawablePadding="10dp"
+                            android:text="收藏"
+                            android:textColor="@color/color333" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_question_list_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_question_total_answers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="65dp"
+                        android:background="#F5F5F5"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp"
+                        android:text="100回答"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/normal_font_size" />
+
+                    <TextView
+                        android:id="@+id/tv_question_directed_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:background="#F5F5F5"
+                        android:gravity="center_vertical|right"
+                        android:paddingRight="@dimen/activity_horizontal_padding"
+                        android:text="Lamda小组"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/normal_font_size" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_question_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@color/colorPrimary"
+                android:paddingRight="@dimen/activity_horizontal_padding"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <ImageView
+                    android:id="@+id/iv_question_edit_answer"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:src="@drawable/icon_edit_answer"
+                    android:visibility="gone"/>
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <cn.edu.nju.cs.seg.schooledinapp.widgets.AudioPlayer
+        android:id="@+id/btn_question_play_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_colorNormal="@color/colorAccent"
+        android:src="@drawable/icon_by_voice"
+        android:visibility="gone" />
+
+</android.support.design.widget.CoordinatorLayout>
+

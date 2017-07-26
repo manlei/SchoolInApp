@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_comment_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_horizontal_padding">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_item_comment_header_avatar"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/schooledin_icon_female_avatar"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.7" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/civ_item_comment_header_avatar"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/civ_item_comment_header_avatar"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_item_comment_author_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/big_font_size" />
+
+            <TextView
+                android:id="@+id/tv_item_comment_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/normal_font_size" />
+
+            <TextView
+                android:id="@+id/tv_item_comment_created_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2018-09-12 17:20"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/small_font_size" />
+
+            <include
+                layout="@layout/include_horizontal_separator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.edu.nju.cs.seg.schooledinapp">
+
+    <uses-permission android:name="android.permission.INTERNET" /> // 网络
+    <uses-permission android:name="android.permission.CAMERA" /> // 照相机
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> // 读外存
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> // 写外存
+    <uses-permission android:name="android.permission.VIBRATE" /> // 震动
+    <uses-permission android:name="android.permission.BODY_SENSORS" /> // 传感器权限
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> // 录音
+
+    <application
+        android:name=".AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="cn.edu.nju.cs.seg.schooledinapp.service.ApiClientGlideModule"
+            android:value="GlideModule" />
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SignInActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:noHistory="true" />
+        <activity android:name=".activity.UserInfoActivity" />
+        <activity android:name=".activity.IndexActivity" />
+        <activity
+            android:name=".activity.UserStudiosActivity"
+            android:label="@string/manifest_label_user_studios" />
+        <activity
+            android:name=".activity.FavoritesActivity"
+            android:label="@string/manifest_label_favorites" />
+        <activity android:name=".activity.StudioInfoActivity" />
+        <activity
+            android:name=".activity.UserQuestionsActivity"
+            android:label="@string/manifest_label_user_questions" />
+        <activity
+            android:name=".activity.UserAnswersActivity"
+            android:label="@string/manifest_label_user_answers" />
+        <activity
+            android:name=".activity.StudioEssaysActivity"
+            android:label="@string/manifest_label_studio_essays" />
+        <activity
+            android:name=".activity.StudioQuestionsActivity"
+            android:label="@string/manifest_label_studio_questions" />
+        <activity
+            android:name=".activity.StudioMembersActivity"
+            android:label="@string/manifest_label_studio_members" />
+        <activity
+            android:name=".activity.EssayActivity"
+            android:label="@string/manifest_label_essay"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.QuestionActivity"
+            android:label="@string/manifest_label_question"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.AnswerActivity"
+            android:label="@string/manifest_label_answer"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.AskQuestionActivity"
+            android:label="" />
+        <activity
+            android:name=".activity.PublishEssayActivity"
+            android:label="" />
+        <activity
+            android:name=".activity.EssayCommentsActivity"
+            android:label="@string/manifest_label_essay_comments"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.AnswerCommentsActivity"
+            android:label="@string/manifest_label_answer_comments"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.PublishAnswerActivity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.EditUserInfoActivity" />
+        <activity android:name=".activity.EditStudioInfoActivity" />
+        <activity
+            android:name=".activity.NotificationsActivity"
+            android:label="@string/manifest_label_my_notifications" />
+        <activity
+            android:name=".activity.UploadAvatarActivity"
+            android:label="" />
+
+        <receiver
+            android:name=".service.NotificationsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+
+                <category android:name="cn.edu.nju.cs.seg.schooledinapp" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.AskQuestionByAudioActivity"></activity>
+        <activity android:name=".activity.PublishEssayByAudioActivity"></activity>
+        <activity android:name=".activity.PublishAnswerByAudioActivity"></activity>
+    </application>
+
+</manifest>

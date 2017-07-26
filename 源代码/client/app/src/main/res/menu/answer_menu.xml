@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cn.edu.nju.cs.seg.schooledinapp.activity.QuestionActivity">
+    <item
+        android:id="@+id/item_answer_settings"
+        android:orderInCategory="100"
+        android:title="@string/item_answer_option_settings"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_padding" >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="5dp" >
+
+        <TextView
+            android:id="@+id/tv_audio_recording_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="@dimen/maximum_font_size" />
+
+    </android.support.v7.widget.CardView>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <cn.edu.nju.cs.seg.schooledinapp.widgets.AudioRecordingButton
+            android:id="@+id/arbtn_audio_recording_record"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_centerVertical="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/btn_audio_recording_long_click_record"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_font_size" />
+
+        <Button
+            android:id="@+id/btn_audio_recording_play"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/btn_audio_recording_click_play"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_font_size"
+            android:clickable="false" />
+
+        <Button
+            android:id="@+id/btn_audio_recording_delete"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@string/btn_audio_recording_click_delete"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_font_size"
+            android:clickable="false" />
+
+    </LinearLayout>
+
+</LinearLayout>

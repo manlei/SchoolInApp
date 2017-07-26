@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6A005F</color>
+    <color name="colorPrimaryDark">#561A4D</color>
+    <color name="colorAccent">#EB5154</color>
+    <color name="windowBackground">#F5F5F5</color>
+    <color name="black">#000</color>
+    <color name="white">#FFF</color>
+    <color name="red">#F00</color>
+    <color name="blue">#00F</color>
+    <color name="green">#0F0</color>
+    <color name="yellow">#FF0</color>
+    <color name="grey">#4B4B4B</color>
+    <color name="fentchGrey">#CCC</color>
+    <color name="lightSkyBlue">#87CEFA</color>
+    <color name="aliceBlue">#F0F8FF</color>
+    <color name="verticalLineBlue">#3460A3</color>
+    <color name="verticalLinePink">#EA5D72</color>
+    <color name="divider">#bdbdbd</color>
+    <color name="color999">#999</color>
+    <color name="trans">#0000</color>
+    <color name="color333">#333</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="cancel_tips_red">#fa5148</color>
+</resources>

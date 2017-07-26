@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_index_basic_info"
+            android:icon="@drawable/icon_account"
+            android:title="@string/item_index_basic_information" />
+
+        <item
+            android:id="@+id/item_index_my_notifications"
+            android:icon="@drawable/icon_notifications"
+            android:title="@string/item_index_my_notifications" />
+
+        <item
+            android:id="@+id/item_index_my_favorites"
+            android:icon="@drawable/icon_favorites"
+            android:title="@string/item_index_my_favorites" />
+
+        <item
+            android:id="@+id/item_index_my_studios"
+            android:icon="@drawable/icon_studios"
+            android:title="@string/item_index_my_studios" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/item_index_settings"
+            android:icon="@drawable/icon_settings"
+            android:title="@string/item_index_settings" />
+
+        <item
+            android:id="@+id/item_index_help"
+            android:icon="@drawable/icon_help"
+            android:title="@string/item_index_help" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/item_index_sign_out"
+            android:icon="@drawable/icon_sign_out"
+            android:title="@string/item_index_sign_out" />
+
+    </group>
+
+</menu>

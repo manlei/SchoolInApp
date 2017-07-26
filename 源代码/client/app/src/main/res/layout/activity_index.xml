@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_index"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.edu.nju.cs.seg.schooledinapp.activity.IndexActivity" >
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_index_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <FrameLayout
+            android:id="@+id/fl_index_main_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize" />
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/fab_index_fab_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/icon_fab"
+            app:fab_addButtonColorNormal="@color/colorAccent"
+            app:fab_labelsPosition="left"
+            app:fab_labelStyle="@style/FabMenuLabelsStyle"
+            android:layout_margin="@dimen/activity_horizontal_margin" >
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_index_fab_by_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/colorAccent"
+                app:fab_title="@string/fab_label_send_by_text"
+                android:src="@drawable/icon_by_text" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_index_fab_by_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/colorAccent"
+                app:fab_title="@string/fab_label_send_by_voice"
+                android:src="@drawable/icon_by_voice" />
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nv_index_nav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/index_nav_menu"
+        app:headerLayout="@layout/header_index_nav_header" />
+
+
+</android.support.v4.widget.DrawerLayout>

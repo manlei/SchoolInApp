@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_question_by_text"
+        android:title="@string/fab_label_send_by_text" />
+
+    <item
+        android:id="@+id/item_question_by_voice"
+        android:title="@string/fab_label_send_by_voice" />
+
+</menu>

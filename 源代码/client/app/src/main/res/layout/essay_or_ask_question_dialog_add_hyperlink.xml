@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_essay_or_ask_question_hyperlink_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:lines="1"
+        android:textSize="@dimen/normal_font_size"
+        android:hint="文本" />
+
+    <TextView
+        android:id="@+id/et_essay_or_ask_question_hyperlink_text_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:gravity="right"
+        android:textColor="@color/red"
+        android:text="文本不能为空"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/et_essay_or_ask_question_hyperlink_link"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:lines="1"
+        android:textSize="@dimen/normal_font_size"
+        android:hint="超链接" />
+
+    <TextView
+        android:id="@+id/et_essay_or_ask_question_hyperlink_link_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:gravity="right"
+        android:textColor="@color/red"
+        android:text="超链接不能为空"
+        android:visibility="gone" />
+
+</LinearLayout>

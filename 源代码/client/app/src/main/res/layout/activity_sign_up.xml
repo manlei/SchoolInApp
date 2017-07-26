@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sign_up"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.SignUpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <ImageView
+                android:id="@+id/iv_sign_up_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/schooledin_icon_logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp" >
+
+                <TextView
+                    android:id="@+id/tv_sign_up_schooled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/windowBackground"
+                    android:textSize="20sp"
+                    android:text=" Schooled" />
+
+                <TextView
+                    android:id="@+id/tv_sign_up_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/yellow"
+                    android:textSize="20sp"
+                    android:text="In" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_sign_up_email"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="5"
+                android:layout_marginTop="20dp"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:textSize="@dimen/normal_font_size"
+                android:hint="请输入邮箱"/>
+
+            <TextView
+                android:id="@+id/tv_sign_up_send_validation_code"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="7dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_font_size"
+                android:visibility="visible"
+                android:text="发送验证码" />
+
+            <TextView
+                android:id="@+id/tv_sign_up_remaining_time"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="7dp"
+                android:background="@color/fentchGrey"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/small_font_size"
+                android:visibility="gone"
+                android:text="03:02" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_sign_up_validation_code"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:lines="1"
+            android:textSize="@dimen/normal_font_size"
+            android:hint="请输入验证码"/>
+
+        <EditText
+            android:id="@+id/et_sign_up_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:textSize="@dimen/normal_font_size"
+            android:hint="请输入密码"/>
+
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cb_sign_up_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/small_font_size"
+            android:textColor="@color/grey"
+            android:text="我已阅读并同意服务条款" />
+
+        <Button
+            android:id="@+id/btn_sign_up_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textSize="@dimen/big_font_size"
+            android:text="注册" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/normal_font_size"
+                android:text="我已经有账户了"/>
+
+            <TextView
+                android:id="@+id/tv_sign_up_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/normal_font_size"
+                android:text="登录"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

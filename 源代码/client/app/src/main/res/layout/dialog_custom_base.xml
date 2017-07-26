@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_custom_base"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="center"
+        android:background="@color/colorPrimary" >
+
+        <TextView
+            android:id="@+id/tv_dialog_custom_base_schooled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic"
+            android:textColor="@color/windowBackground"
+            android:textSize="20sp"
+            android:text=" Schooled" />
+
+        <TextView
+            android:id="@+id/tv_dialog_custom_base_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic"
+            android:textColor="@color/yellow"
+            android:textSize="20sp"
+            android:text="In" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_dialog_custom_base_main_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- set Main Body here -->
+
+    </FrameLayout>
+
+</LinearLayout>

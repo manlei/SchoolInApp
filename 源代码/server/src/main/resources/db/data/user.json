@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "username": "mojombo",
+    "avatar":1,
+    "email":"141220900@smail.nju.edu.cn",
+    "phone":"1234152345",
+    "bio":null,
+    "sex": "unknown",
+    "age": 20,
+    "department": "计算机科学与技术系",
+    "location": ""
+  }
+]

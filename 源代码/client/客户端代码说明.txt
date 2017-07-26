@@ -1,0 +1,394 @@
+.
+├── app
+│   ├── build.gradle
+│   ├── proguard-rules.pro
+│   └── src
+│       ├── androidTest																-> 安卓端测试代码
+│       │   └── java
+│       │       └── cn
+│       │           └── edu
+│       │               └── nju
+│       │                   └── cs
+│       │                       └── seg
+│       │                           └── schooledinapp
+│       │                               ├── ExampleInstrumentedTest.java
+│       │                               ├── activity								-> 安卓端 Activity 测试代码
+│       │                               │   ├── AnswerActivityTest.java				-> AnswerActivity 测试代码
+│       │                               │   ├── AskQuestionActivityTest.java		-> AskQuestionActivity 测试代码
+│       │                               │   ├── BaseActivityTest.java				-> 测试代码基类
+│       │                               │   ├── EssayActivityTest.java				-> EssayActivity 测试代码
+│       │                               │   ├── IndexActivityTest.java				-> IndexActivity 测试代码
+│       │                               │   ├── PublishAnswerActivityTest.java		-> PublishAnswerActivity 测试代码
+│       │                               │   ├── PublishEssayActivityTest.java		-> PublishEssayActivity 测试代码
+│       │                               │   ├── QuestionActivityTest.java			-> QuestionActivity 测试代码
+│       │                               │   ├── SignInActivityTest.java				-> SignInActivity 测试代码
+│       │                               │   ├── SignUpActivityTest.java				-> SignUpActivity 测试代码
+│       │                               │   ├── StudioInfoActivityTest.java			-> StudioInfoActivity 测试代码
+│       │                               │   └── UserInfoActivityTest.java			-> UserInfoActivity 测试代码
+│       │                               ├── fragment								-> 安卓端 Fragment 测试代码
+│       │                               │   └── MainBodyFragmentTest.java			-> MainBodyFragment 测试代码
+│       │                               └── testutils								-> 测试工具类
+│       │                                   ├── CustomScrollActions.java			-> 自定义滚动动作
+│       │                                   └── FragmentTestRule.java				-> FragmentTest 规则
+│       ├── debug
+│       │   ├── AndroidManifest.xml													-> 调试配置文件
+│       │   ├── java
+│       │   │   └── cn
+│       │   │       └── edu
+│       │   │           └── nju
+│       │   │               └── cs
+│       │   │                   └── seg
+│       │   │                       └── schooledinapp
+│       │   │                           └── activity
+│       │   │                               └── TestActivity.java					-> 测试 Fragment 所需 Activity 代码
+│       │   └── res
+│       │       └── layout
+│       │           └── activity_test.xml											-> 测试 Fragment 所需 Activity 界面文件
+│       ├── main
+│       │   ├── AndroidManifest.xml													-> 配置文件
+│       │   ├── assets																-> 资源文件
+│       │   │   └── fonts
+│       │   │       └── BrushScriptStd.otf
+│       │   ├── java																-> 代码文件
+│       │   │   └── cn
+│       │   │       └── edu
+│       │   │           └── nju
+│       │   │               └── cs
+│       │   │                   └── seg
+│       │   │                       └── schooledinapp
+│       │   │                           ├── AppConfig.java							-> 整体配置
+│       │   │                           ├── AppContext.java							-> 整体上下文
+│       │   │                           ├── activity								-> Activity 包
+│       │   │                           │   ├── AnswerActivity.java					-> 回答页面
+│       │   │                           │   ├── AnswerCommentsActivity.java			-> 回答的评论页面
+│       │   │                           │   ├── AskQuestionActivity.java			-> 文字提问页面
+│       │   │                           │   ├── AskQuestionByAudioActivity.java		-> 语音提问页面
+│       │   │                           │   ├── EditStudioInfoActivity.java			-> 编辑工作室信息页面
+│       │   │                           │   ├── EditUserInfoActivity.java			-> 编辑用户信息页面
+│       │   │                           │   ├── EssayActivity.java					-> 文章页面
+│       │   │                           │   ├── EssayCommentsActivity.java			-> 文章的评论页面
+│       │   │                           │   ├── FavoritesActivity.java				-> 收藏页面
+│       │   │                           │   ├── IndexActivity.java					-> 主页
+│       │   │                           │   ├── MainActivity.java					-> Splash页面
+│       │   │                           │   ├── NotificationsActivity.java			-> 通知页面
+│       │   │                           │   ├── PublishAnswerActivity.java			-> 文字发布回答页面
+│       │   │                           │   ├── PublishAnswerByAudioActivity.java	-> 语音发布回答页面
+│       │   │                           │   ├── PublishEssayActivity.java			-> 文字发布文章页面
+│       │   │                           │   ├── PublishEssayByAudioActivity.java	-> 语音发布文章页面
+│       │   │                           │   ├── QuestionActivity.java				-> 问题页面
+│       │   │                           │   ├── SignInActivity.java					-> 登录页面
+│       │   │                           │   ├── SignUpActivity.java					-> 注册页面
+│       │   │                           │   ├── StudioEssaysActivity.java			-> 工作室文章页面
+│       │   │                           │   ├── StudioInfoActivity.java				-> 工作室信息页面
+│       │   │                           │   ├── StudioMembersActivity.java			-> 工作室成员页面
+│       │   │                           │   ├── StudioQuestionsActivity.java		-> 工作室问题页面
+│       │   │                           │   ├── UploadAvatarActivity.java			-> 上传头像页面
+│       │   │                           │   ├── UserAnswersActivity.java			-> 用户回答页面
+│       │   │                           │   ├── UserInfoActivity.java				-> 用户信息页面
+│       │   │                           │   ├── UserQuestionsActivity.java			-> 用户问题页面
+│       │   │                           │   ├── UserStudiosActivity.java			-> 用户工作室页面
+│       │   │                           │   └── base								-> Activity 基类
+│       │   │                           │       ├── BaseActivity.java				-> 基 Activity
+│       │   │                           │       ├── BaseSwipeRefreshListActivity.java -> 基 下拉刷新 页面
+│       │   │                           │       └── PublishAudioActivity.java		-> 语音发布页面
+│       │   │                           ├── adapter									-> RecyclerView 适配器
+│       │   │                           │   ├── AnswerCommentItemAdapter.java		-> 回答的评论适配器
+│       │   │                           │   ├── EssayCommentItemAdapter.java		-> 文章的评论适配器
+│       │   │                           │   ├── FavoriteAnswerItemAdapter.java		-> 收藏的回答适配器
+│       │   │                           │   ├── FavoriteEssayItemAdapter.java		-> 收藏的文章适配器
+│       │   │                           │   ├── FavoriteQuestionItemAdapter.java	-> 收藏的问题页面
+│       │   │                           │   ├── MainItemAdapter.java				-> 主页 item 适配器
+│       │   │                           │   ├── NotificationItemAdapter.java		-> 通知 item 适配器
+│       │   │                           │   ├── QuestionAnswerItemAdapter.java		-> 问题的忽地啊适配器
+│       │   │                           │   ├── QuickFragmentPageAdapter.java		-> ViewPager 基适配器
+│       │   │                           │   ├── SearchFragmentAdapter.java			-> 搜索片段适配器
+│       │   │                           │   ├── SearchQuestionsItemAdapter.java		-> 搜索的问题 item 适配器
+│       │   │                           │   ├── SearchStudiosItemAdapter.java		-> 搜索的工作室 item 适配器
+│       │   │                           │   ├── SearchUsersItemAdapter.java			-> 搜索的用户 item 适配器
+│       │   │                           │   ├── StudioEssayItemAdapter.java			-> 工作室文章 item 适配器
+│       │   │                           │   ├── StudioMemberItemAdapter.java		-> 工作室成员 item 适配器
+│       │   │                           │   ├── StudioQuestionItemAdapter.java		-> 工作室问题 item 适配器
+│       │   │                           │   ├── UserAnswerItemAdapter.java			-> 用户回答 item 适配器
+│       │   │                           │   ├── UserQuestionItemAdapter.java		-> 用户问题 item 适配器
+│       │   │                           │   ├── UserStudioItemAdapter.java			-> 用户工作室 item 适配器
+│       │   │                           │   └── base								-> 适配器基类
+│       │   │                           │       └── BaseItemAdapter.java
+│       │   │                           ├── dialog
+│       │   │                           │   ├── AddEssayOrQuestionHypertextDialog.java  -> 添加文章户问题的链接的对话框
+│       │   │                           │   ├── AddEssayTitleDialog.java				-> 添加文章题目（文本）对话框
+│       │   │                           │   ├── AddEssayTitleForAudioDialog.java		-> 添加文章题目（语音）对话框
+│       │   │                           │   ├── AddHypertextDialog.java					-> 添加超文本链接对话框
+│       │   │                           │   ├── AddMembersDialog.java					-> 添加工作室成员对话框
+│       │   │                           │   ├── AddQuestionTitleDialog.java				-> 添加问题题目（文本）对话框
+│       │   │                           │   ├── AddQuestionTitleForAudioDialog.java		-> 添加问题题目（语音）对话框
+│       │   │                           │   ├── AudioRecordingDialog.java				-> 录音对话框
+│       │   │                           │   ├── BindPhoneDialog.java					-> 绑定手机对话框
+│       │   │                           │   ├── UpdatePasswordDialog.java				-> 修改密码对话框
+│       │   │                           │   └── base									-> 对话框基类
+│       │   │                           │       └── CustomBaseDialog.java
+│       │   │                           ├── fragment									-> 片段
+│       │   │                           │   ├── AnswerCommentsFragment.java				-> 问题的评论片段
+│       │   │                           │   ├── AudioRecordingFragment.java				-> 语音录制片段
+│       │   │                           │   ├── EssayCommentsFragment.java				-> 文章的评论片段
+│       │   │                           │   ├── FavoriteAnswersFragment.java			-> 收藏的回答片段
+│       │   │                           │   ├── FavoriteEssaysFragment.java				-> 收藏的文章片段
+│       │   │                           │   ├── FavoriteQuestionsFragment.java			-> 收藏的问题片段
+│       │   │                           │   ├── MainBodyFragment.java					-> 主页片段
+│       │   │                           │   ├── NotificationsFragment.java				-> 通知页面片段
+│       │   │                           │   ├── QuestionAnswerFragment.java				-> 问题的回答片段
+│       │   │                           │   ├── SearchFragment.java						-> 搜索片段
+│       │   │                           │   ├── SearchQuestionsFragment.java			-> 搜索的问题片段
+│       │   │                           │   ├── SearchStudiosFragment.java				-> 搜索的工作室片段
+│       │   │                           │   ├── SearchUsersFragment.java				-> 搜索的用户片段
+│       │   │                           │   └── base									-> 片段基类
+│       │   │                           │       ├── BaseFragment.java					-> 最基础的片段
+│       │   │                           │       ├── BaseRecyclerViewFragment.java		-> RecyclerView 片段基类
+│       │   │                           │       └── BaseSwipeRefreshListFragment.java	-> 下拉刷新片段基类
+│       │   │                           ├── interf										-> 基类
+│       │   │                           │   └── OnAppBarStateChangedListener.java		-> AppBar 状态变迁监听器
+│       │   │                           ├── model										-> 模型类
+│       │   │                           │   ├── Answer.java
+│       │   │                           │   ├── AnswerCommentItem.java
+│       │   │                           │   ├── BusEventFilter.java
+│       │   │                           │   ├── Comment.java
+│       │   │                           │   ├── Essay.java
+│       │   │                           │   ├── EssayCommentItem.java
+│       │   │                           │   ├── FavoriteAnswerItem.java
+│       │   │                           │   ├── FavoriteEssayItem.java
+│       │   │                           │   ├── FavoriteQuestionItem.java
+│       │   │                           │   ├── MainItem.java
+│       │   │                           │   ├── NotificationItem.java
+│       │   │                           │   ├── OnlineUser.java
+│       │   │                           │   ├── Question.java
+│       │   │                           │   ├── QuestionAnswerItem.java
+│       │   │                           │   ├── SearchQuestionItem.java
+│       │   │                           │   ├── SearchStudioItem.java
+│       │   │                           │   ├── SearchUserItem.java
+│       │   │                           │   ├── Studio.java
+│       │   │                           │   ├── StudioEssayItem.java
+│       │   │                           │   ├── StudioMemberItem.java
+│       │   │                           │   ├── StudioQuestionItem.java
+│       │   │                           │   ├── User.java
+│       │   │                           │   ├── UserAnswerItem.java
+│       │   │                           │   ├── UserQuestionItem.java
+│       │   │                           │   ├── UserStudioItem.java
+│       │   │                           │   └── UserSupportItem.java
+│       │   │                           ├── service										-> 服务类，与服务器的 API 接口
+│       │   │                           │   ├── AnswersService.java
+│       │   │                           │   ├── ApiClient.java
+│       │   │                           │   ├── ApiClientGlideModule.java
+│       │   │                           │   ├── CommentsService.java
+│       │   │                           │   ├── EssaysService.java
+│       │   │                           │   ├── IndexService.java
+│       │   │                           │   ├── NotificationsReceiver.java
+│       │   │                           │   ├── OkHttpStreamFetcher.java
+│       │   │                           │   ├── OkHttpUrlLoader.java
+│       │   │                           │   ├── QuestionsService.java
+│       │   │                           │   ├── StudiosService.java
+│       │   │                           │   └── UsersService.java
+│       │   │                           ├── util										-> 工具类
+│       │   │                           │   ├── AudioManager.java						-> 录音管理工具
+│       │   │                           │   ├── DialogUtil.java							-> 对话框工具
+│       │   │                           │   ├── FileUtils.java							-> 文件工具
+│       │   │                           │   ├── GlideImageGetter.java					-> GlideImage 拉取工具
+│       │   │                           │   ├── JsonRequestBodyBuilder.java				-> JsonRequestBody 构建工具
+│       │   │                           │   ├── LogUtil.java							-> 调试日志工具
+│       │   │                           │   ├── MediaManager.java						-> 媒体管理工具
+│       │   │                           │   ├── PermissionUtil.java						-> 权限管理工具
+│       │   │                           │   └── WrapperTarget.java
+│       │   │                           └── widgets										-> 组件
+│       │   │                               ├── AudioPlayer.java						-> 录音播放组件
+│       │   │                               ├── AudioRecordingButton.java				-> 长按录音组件
+│       │   │                               └── RichTextView.java						-> 富文本组件
+│       │   └── res																		-> 资源文件
+│       │       ├── drawable
+│       │       │   ├── actionsheet_single_normal.9.png
+│       │       │   ├── menu_fab_labels_bg.xml
+│       │       │   ├── selector_send.xml
+│       │       │   └── shape_white.xml
+│       │       ├── drawable-xxhdpi
+│       │       │   ├── actionsheet_single_normal.9.png
+│       │       │   ├── bg_color.png
+│       │       │   ├── blockquote.png
+│       │       │   ├── bold.png
+│       │       │   ├── bullets.png
+│       │       │   ├── chat_48.png
+│       │       │   ├── h1.png
+│       │       │   ├── h2.png
+│       │       │   ├── h3.png
+│       │       │   ├── h4.png
+│       │       │   ├── h5.png
+│       │       │   ├── h6.png
+│       │       │   ├── html_edit.png
+│       │       │   ├── icon_account.png
+│       │       │   ├── icon_add.png
+│       │       │   ├── icon_arrow_back.png
+│       │       │   ├── icon_arrow_down.png
+│       │       │   ├── icon_arrow_up.png
+│       │       │   ├── icon_back.png
+│       │       │   ├── icon_by_text.png
+│       │       │   ├── icon_by_voice.png
+│       │       │   ├── icon_collect.png
+│       │       │   ├── icon_collect_white.png
+│       │       │   ├── icon_comment.png
+│       │       │   ├── icon_comment_white.png
+│       │       │   ├── icon_department.png
+│       │       │   ├── icon_edit_answer.png
+│       │       │   ├── icon_email.png
+│       │       │   ├── icon_fab.png
+│       │       │   ├── icon_favorites.png
+│       │       │   ├── icon_help.png
+│       │       │   ├── icon_menu.png
+│       │       │   ├── icon_notifications.png
+│       │       │   ├── icon_phone.png
+│       │       │   ├── icon_praise.png
+│       │       │   ├── icon_praise_white.png
+│       │       │   ├── icon_search.png
+│       │       │   ├── icon_send_comment.png
+│       │       │   ├── icon_send_comment_black.png
+│       │       │   ├── icon_settings.png
+│       │       │   ├── icon_sex.png
+│       │       │   ├── icon_sex_female.png
+│       │       │   ├── icon_sex_male.png
+│       │       │   ├── icon_sex_unknown.png
+│       │       │   ├── icon_sign_out.png
+│       │       │   ├── icon_studios.png
+│       │       │   ├── indent.png
+│       │       │   ├── insert_image.png
+│       │       │   ├── insert_link.png
+│       │       │   ├── italic.png
+│       │       │   ├── justify_center.png
+│       │       │   ├── justify_left.png
+│       │       │   ├── justify_right.png
+│       │       │   ├── numbers.png
+│       │       │   ├── outdent.png
+│       │       │   ├── redo.png
+│       │       │   ├── schooledin_icon_female_avatar.jpg
+│       │       │   ├── schooledin_icon_logo.png
+│       │       │   ├── schooledin_icon_male_avatar.jpg
+│       │       │   ├── strikethrough.png
+│       │       │   ├── subscript.png
+│       │       │   ├── superscript.png
+│       │       │   ├── txt_color.png
+│       │       │   ├── underline.png
+│       │       │   ├── undo.png
+│       │       │   ├── voice_alert.png
+│       │       │   ├── voice_cancel.png
+│       │       │   ├── voice_state_1.png
+│       │       │   ├── voice_state_2.png
+│       │       │   ├── voice_state_3.png
+│       │       │   ├── voice_state_4.png
+│       │       │   └── voice_state_5.png
+│       │       ├── layout
+│       │       │   ├── activity_answer.xml
+│       │       │   ├── activity_ask_question.xml
+│       │       │   ├── activity_base_swipe_refresh_list.xml
+│       │       │   ├── activity_comment.xml
+│       │       │   ├── activity_edit_studio_info.xml
+│       │       │   ├── activity_edit_user_info.xml
+│       │       │   ├── activity_essay.xml
+│       │       │   ├── activity_favorites.xml
+│       │       │   ├── activity_index.xml
+│       │       │   ├── activity_main.xml
+│       │       │   ├── activity_notifications.xml
+│       │       │   ├── activity_publish_answer.xml
+│       │       │   ├── activity_publish_audio.xml
+│       │       │   ├── activity_publish_essay.xml
+│       │       │   ├── activity_question.xml
+│       │       │   ├── activity_sign_in.xml
+│       │       │   ├── activity_sign_up.xml
+│       │       │   ├── activity_studio_info.xml
+│       │       │   ├── activity_upload_avatar.xml
+│       │       │   ├── activity_user_info.xml
+│       │       │   ├── ask_question_dialog_add_title.xml
+│       │       │   ├── content_answer.xml
+│       │       │   ├── content_essay.xml
+│       │       │   ├── dialog_add_hyperlink.xml
+│       │       │   ├── dialog_audio_recording.xml
+│       │       │   ├── dialog_custom_base.xml
+│       │       │   ├── essay_or_ask_question_dialog_add_hyperlink.xml
+│       │       │   ├── favorites_item_answer.xml
+│       │       │   ├── favorites_item_essay.xml
+│       │       │   ├── favorites_item_question.xml
+│       │       │   ├── fragment_audio_recording.xml
+│       │       │   ├── fragment_base_recycler_view.xml
+│       │       │   ├── fragment_base_swipe_refresh_list.xml
+│       │       │   ├── fragment_search.xml
+│       │       │   ├── fragment_search_questions.xml
+│       │       │   ├── fragment_search_studios.xml
+│       │       │   ├── fragment_search_users.xml
+│       │       │   ├── header_index_nav_header.xml
+│       │       │   ├── header_notifications_rv_header.xml
+│       │       │   ├── include_dot_separator.xml
+│       │       │   ├── include_horizontal_separator.xml
+│       │       │   ├── include_vertical_separator.xml
+│       │       │   ├── item_answer.xml
+│       │       │   ├── item_comment.xml
+│       │       │   ├── main_body_item_essay.xml
+│       │       │   ├── main_body_item_question.xml
+│       │       │   ├── notifications_item_answered.xml
+│       │       │   ├── notifications_item_commented.xml
+│       │       │   ├── notifications_item_invited.xml
+│       │       │   ├── popupwindow_delete_user_question.xml
+│       │       │   ├── publish_essay_dialog_add_title.xml
+│       │       │   ├── search_item_questions.xml
+│       │       │   ├── search_item_studios.xml
+│       │       │   ├── search_item_users.xml
+│       │       │   ├── studio_essays_item_essay.xml
+│       │       │   ├── studio_members_dialog_add_members.xml
+│       │       │   ├── studio_members_item_member.xml
+│       │       │   ├── studio_questions_item_question.xml
+│       │       │   ├── user_answers_item_answer.xml
+│       │       │   ├── user_info_dialog_bind_phone.xml
+│       │       │   ├── user_info_dialog_update_password.xml
+│       │       │   ├── user_questions_item_question.xml
+│       │       │   └── user_studios_item_studio.xml
+│       │       ├── menu
+│       │       │   ├── answer_menu.xml
+│       │       │   ├── ask_question_essay_menu.xml
+│       │       │   ├── essay_menu.xml
+│       │       │   ├── index_nav_menu.xml
+│       │       │   ├── index_options_menu.xml
+│       │       │   └── question_menu_select_publish_manner.xml
+│       │       ├── mipmap-hdpi
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-mdpi
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-xhdpi
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-xxhdpi
+│       │       │   └── ic_launcher.png
+│       │       ├── mipmap-xxxhdpi
+│       │       │   └── ic_launcher.png
+│       │       ├── values
+│       │       │   ├── arrays.xml
+│       │       │   ├── colors.xml
+│       │       │   ├── dimens.xml
+│       │       │   ├── strings.xml
+│       │       │   └── styles.xml
+│       │       ├── values-v21
+│       │       │   └── styles.xml
+│       │       └── values-w820dp
+│       │           └── dimens.xml
+│       └── test																-> 非 Android 测试
+│           └── java
+│               └── cn
+│                   └── edu
+│                       └── nju
+│                           └── cs
+│                               └── seg
+│                                   └── schooledinapp
+│                                       ├── ExampleUnitTest.java
+│                                       └── util
+│                                           └── JsonRequestBodyBuilderTest.java -> JsonRequestBodyBuilder 测试类
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
+
+71 directories, 321 files

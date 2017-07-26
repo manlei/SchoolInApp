@@ -1,0 +1,114 @@
+group 'cn.edu.nju.cs.seg.server'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+sourceCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.3'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tomcat {
+    httpPort = 8080
+//    httpsPort = 8443
+//    enableSSL = true
+//    httpProtocol = 'org.apache.coyote.http11.Http11AprProtocol'
+//    ajpProtocol  = 'org.apache.coyote.ajp.AjpAprProtocol'
+}
+
+dependencies {
+
+    def tomcatVersion = '8.0.45'
+    def springVersion = '4.3.7.RELEASE'
+    def luceneVersion = '6.6.0'
+    def hibernateVersion = '5.2.8.Final'
+    testCompile "junit:junit:4.12"
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "org.mockito:mockito-core:2.8.9"
+    testCompile "org.assertj:assertj-core:3.8.0"
+    testCompile "org.hamcrest:hamcrest-all:1.3"
+    testCompile "org.skyscreamer:jsonassert:1.5.0"
+
+
+    //servlet
+    compile "javax.servlet:javax.servlet-api:4.0.0-b05"
+
+    //java mail
+    compile "com.sun.mail:javax.mail:1.5.6"
+
+    //spring mvc
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-webmvc:${springVersion}"
+
+    compile "commons-fileupload:commons-fileupload:1.3.2"
+
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.2'
+
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8'
+
+    //hibernate jpa相关
+    compile "org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.1.Final"
+    compile "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
+    //c3p0连接池
+    compile "org.hibernate:hibernate-c3p0:${hibernateVersion}"
+    //ehcache二级缓存
+    compile "org.hibernate:hibernate-ehcache:${hibernateVersion}"
+
+    // LOG
+    compile "org.slf4j:slf4j-api:1.7.25"
+    compile "log4j:log4j:1.2.17"
+    compile "org.slf4j:slf4j-log4j12:1.7.25"
+
+    //mysql
+    compile "mysql:mysql-connector-java:5.1.41"
+
+    //JPUSH
+    compile "cn.jpush.api:jpush-client:3.2.20"
+    compile "io.netty:netty-all:4.1.11.Final"
+    compile "com.google.code.gson:gson:2.8.1"
+
+    //json path test
+    compile "com.jayway.jsonpath:json-path:2.3.0"
+
+    //ehcache 缓存
+    compile "org.ehcache:ehcache:3.3.1"
+
+    //retrofit2
+    compile "com.squareup.retrofit2:retrofit:2.3.0"
+
+    //jsoup
+    compile "org.jsoup:jsoup:1.10.3"
+
+    //lucene
+    compile "org.apache.lucene:lucene-core:${luceneVersion}"
+    compile "org.apache.lucene:lucene-queryparser:${luceneVersion}"
+
+    compile "org.apache.tomcat:tomcat-coyote:${tomcatVersion}"
+
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+            
+
+
+
+
+}
+
+

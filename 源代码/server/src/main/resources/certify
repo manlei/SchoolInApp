@@ -1,0 +1,55 @@
+#!/bin/bash -e
+
+if [[ -z "$1" ]]; then cat <<EOF
+certify - Creates and self-signs X.509 SSL/TLS certificates
+          with the "subjectAltName" extension.
+Usage: certify IP:114.212.130.21 [IP:114.212.130.21] [DNS:mail.example.com] [...]
+
+EOF
+exit; fi
+
+umask 066
+KEYSIZE=2048
+DAYS=3650
+PRIVKEY="privkey.pem"
+CSR="csr.pem"
+CERT="cert.pem"
+CN="$1"
+altnames="$1"
+while shift && (($#)); do altnames="$altnames,$1"; done
+echo -e "basicConstraints=critical,CA:true,pathlen:0\nsubjectAltName=$altnames" > extensions.ini
+
+# generate private key
+openssl genrsa -out "$PRIVKEY" $KEYSIZE
+
+# generate certificate signing request
+openssl req \
+	-new \
+	-key "$PRIVKEY" \
+	-out "$CSR" \
+	-subj "/C=CN/ST=Uxample/L=Vxample/O=Wxample Tech Inc/CN=schooledin.pseudoserver"
+
+# generate the self-signed certificate with SAN enabled
+openssl x509 \
+	-req -signkey "$PRIVKEY" \
+	-days $DAYS \
+	-in "$CSR" \
+	-out "$CERT" \
+	-extfile extensions.ini \
+
+# remove redundant files
+rm extensions.ini "$CSR"
+
+# show certification info
+openssl x509 -in "$CERT" -noout -text
+
+# mv to ssl/
+mv $PRIVKEY ssl/ && mv $CERT ssl/
+
+cat <<EOF
+`tput bold`
+Success! Your brand new certificate has been written to "ssl/$CERT".
+Your private key has been written to "ssl/$PRIVKEY". Share the certificate
+with everyone, and the key with no one!
+`tput sgr0`
+EOF

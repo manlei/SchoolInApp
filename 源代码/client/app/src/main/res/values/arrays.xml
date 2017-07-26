@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="email_host_of_nju">
+        <item>@string/email_host_of_student</item>
+        <item>@string/email_host_of_faculty</item>
+        <item>@string/email_host_of_phone</item>
+    </string-array>
+    <string-array name="edit_user_info_sex">
+        <item>unknown</item>
+        <item>male</item>
+        <item>female</item>
+    </string-array>
+
+</resources>

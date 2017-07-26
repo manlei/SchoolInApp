@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/index_nav_header_size"
+    android:padding="10dp"
+    android:background="@color/colorPrimary" >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_index_user_avatar"
+        android:layout_width="@dimen/header_avatar_size"
+        android:layout_height="@dimen/header_avatar_size"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/schooledin_icon_male_avatar" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/civ_index_user_avatar" >
+
+        <TextView
+            android:id="@+id/tv_index_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:textSize="@dimen/big_font_size"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:hint="匿名用户"
+            android:textColorHint="@color/fentchGrey" />
+
+        <TextView
+            android:id="@+id/tv_index_user_bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textSize="@dimen/small_font_size"
+            android:textColor="@color/white"
+            android:hint="@string/tv_index_user_bio_hint"
+            android:textColorHint="@color/fentchGrey" />
+
+    </LinearLayout>
+
+</RelativeLayout>
